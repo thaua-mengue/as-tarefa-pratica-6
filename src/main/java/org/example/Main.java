@@ -21,8 +21,8 @@ public class Main {
 
         // Consultar rotas
         ControladorDeRotas controladorDeRotas = new ControladorDeRotas();
-        Endereco origem = new Endereco("Rua A", 100, "Cidade1", "Estado1", "11111-111");
-        Endereco destino = new Endereco("Rua B", 200, "Cidade2", "Estado1", "22222-222");
+        Endereco origem = EnderecoFactory.criarEndereco("Rua A", 100, "Cidade1", "Estado1", "11111-111");
+        Endereco destino = EnderecoFactory.criarEndereco("Rua B", 200, "Cidade2", "Estado1", "22222-222");
         List<Rota> rotas = controladorDeRotas.consultarRotas(origem, destino);
 
         System.out.println("Rotas disponíveis:");
