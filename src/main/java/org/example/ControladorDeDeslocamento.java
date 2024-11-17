@@ -1,13 +1,38 @@
 package org.example;
 
-// Classe ControladorDeDeslocamento
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe ControladorDeDeslocamento, aqui foi aplicado o padrão Controlador para centralizar a lógica da aplicação
+// Separando as responsabilidades e mantendo a interface do sistema mais simples
 class ControladorDeDeslocamento {
+    private List<AlteracaoRotaObserver> observers = new ArrayList<>();
 
-    // TODO adicionar observers para enviar notificações para o usuario como chegada ao destino, alterações de rota etc
+    public void registrarObserver(AlteracaoRotaObserver observer) {
+        observers.add(observer);
+    }
 
+    public void removerObserver(AlteracaoRotaObserver observer) {
+        observers.remove(observer);
+    }
+
+    private void notificarObservers(String mensagem) {
+        for (AlteracaoRotaObserver observer : observers) {
+            observer.notificar(mensagem);
+        }
+    }
 
     public void iniciarDeslocamento(Rota rota) {
         System.out.println("Deslocamento iniciado!");
         System.out.println(rota.getDetalhes());
+        notificarObservers("Deslocamento iniciado para a rota: " + rota.getDetalhes());
+    }
+
+    public void chegadaAoDestino() {
+        notificarObservers("Chegada ao destino.");
+    }
+
+    public void alteracaoDeRota() {
+        notificarObservers("Rota alterada.");
     }
 }

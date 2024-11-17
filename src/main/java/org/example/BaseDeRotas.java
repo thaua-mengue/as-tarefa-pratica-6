@@ -9,6 +9,8 @@ class BaseDeRotas {
 
     /*
     Tornando a classe um Singleton para garantir que exista apenas uma instancia centralizada da mesma.
+
+    Aqui foi aplicado o padrão de alta coesão, uma vez que a classe lida exclusivamente as rotas.
     */
     private static BaseDeRotas instancia;
     private List<Rota> rotas;

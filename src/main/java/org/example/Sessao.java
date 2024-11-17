@@ -1,6 +1,9 @@
 package org.example;
 
-// Classe Sessao
+/*
+    Classe Sessao, aqui foi aplicado o padrão de alta coesão pois a classe gerencia apenas as informações de sessão
+    do usuário
+*/
 class Sessao {
     private Usuario usuario;
 
