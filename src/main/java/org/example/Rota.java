@@ -1,6 +1,7 @@
 package org.example;
 
-// Classe Rota
+// Classe Rota, aqui está sendo aplicado o padrão especialista pois a classe encapsula os dados
+// e comportamentos diretamente relacionados a ela
 class Rota {
     private Endereco origem;
     private Endereco destino;

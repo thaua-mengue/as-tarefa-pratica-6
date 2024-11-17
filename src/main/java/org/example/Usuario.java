@@ -1,9 +1,7 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
-// Classe Usuario
+// Classe Usuario, aqui está sendo aplicado o padrão especialista pois a classe encapsula os dados
+// e comportamentos diretamente relacionados a ela
 class Usuario {
     private String nome;
     private String email;

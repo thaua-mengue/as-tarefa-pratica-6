@@ -1,6 +1,7 @@
 package org.example;
 
-// Classe Endereco
+// Classe Endereco, aqui está sendo aplicado o padrão especialista pois a classe encapsula os dados
+// e comportamentos diretamente relacionados a ela
 class Endereco {
     private String rua;
     private int numero;
