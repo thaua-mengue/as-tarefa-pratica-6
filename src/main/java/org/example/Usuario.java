@@ -1,7 +1,10 @@
 package org.example;
 
-// Classe Usuario, aqui está sendo aplicado o padrão especialista pois a classe encapsula os dados
-// e comportamentos diretamente relacionados a ela
+/*
+    Classe Usuario, aqui está sendo aplicado o padrão especialista pois a classe encapsula os dados
+    e comportamentos diretamente relacionados a ela.
+    Também está sendo aplicado o padrão de baixo acoplamento, pois usuário não precisa conhecer detalhes de sessão
+*/
 class Usuario {
     private String nome;
     private String email;
