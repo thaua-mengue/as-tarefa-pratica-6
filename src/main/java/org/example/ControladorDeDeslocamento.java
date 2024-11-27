@@ -6,18 +6,18 @@ import java.util.List;
 // Classe ControladorDeDeslocamento, aqui foi aplicado o padrão Controlador para centralizar a lógica da aplicação
 // Separando as responsabilidades e mantendo a interface do sistema mais simples
 class ControladorDeDeslocamento {
-    private List<AlteracaoRotaObserver> observers = new ArrayList<>();
+    private List<DeslocamentoObserver> observers = new ArrayList<>();
 
-    public void registrarObserver(AlteracaoRotaObserver observer) {
+    public void registrarObserver(DeslocamentoObserver observer) {
         observers.add(observer);
     }
 
-    public void removerObserver(AlteracaoRotaObserver observer) {
+    public void removerObserver(AlteracaoDeslocamentoObserver observer) {
         observers.remove(observer);
     }
 
     private void notificarObservers(String mensagem) {
-        for (AlteracaoRotaObserver observer : observers) {
+        for (DeslocamentoObserver observer : observers) {
             observer.notificar(mensagem);
         }
     }

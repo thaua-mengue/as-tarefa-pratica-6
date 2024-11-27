@@ -34,6 +34,9 @@ public class Main {
         if (!rotas.isEmpty()) {
             ControladorDeDeslocamento controladorDeDeslocamento = new ControladorDeDeslocamento();
             controladorDeDeslocamento.iniciarDeslocamento(rotas.get(0));
+
+            DeslocamentoObserver observer = new AlteracaoDeslocamentoObserver();
+            controladorDeDeslocamento.registrarObserver(observer);
         }
 
         // Encerrar sessão
